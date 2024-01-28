@@ -17,8 +17,7 @@ function displayProducts(products) {
       <p>${product.description}</p>
       <p>Price: $${product.price.toFixed(2)}</p>
       <img src="${product.image}" alt="${product.title}" width="100">
-      <hr>
-    `;
+      `;
     productsContainer.appendChild(productCard);
   });
 }

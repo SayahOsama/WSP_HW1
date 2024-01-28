@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   fetch('data.js')
-  .then(response => console.log(response.json()));
+  .then(response => console.log(response.text()));
   //.then(productData => console.log(productData));
 });
 

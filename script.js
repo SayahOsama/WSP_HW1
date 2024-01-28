@@ -1,8 +1,17 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   fetch('data.js')
-  .then(response => console.log(response.text()));
-  //.then(productData => console.log(productData));
+   .then(response => response.text())
+   .then(dataScript => {
+    // Use the Function constructor to execute the script
+    const dataModule = new Function(dataScript);
+    
+    // Extract the exported data
+    const { productsData } = dataModule();
+    
+    // Use the productsData object as needed
+    console.log(productsData.products);
+  });
 });
 
 // function displayProducts(productsData) {

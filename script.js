@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   fetch('data.js')
-   .then(response => response.text())
+   .then(response => response.json())
    .then(dataScript => {
     // Use the Function constructor to execute the script
     const dataModule = new Function(dataScript);

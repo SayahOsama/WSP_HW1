@@ -1,17 +1,8 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   fetch('data.js')
-   .then(response => response.json())
-   .then(dataScript => {
-    // Use the Function constructor to execute the script
-    const dataModule = new Function(dataScript);
-    
-    // Extract the exported data
-    const { productsData } = dataModule();
-    
-    // Use the productsData object as needed
-    console.log(productsData.products);
-  });
+   .then(response => console.log(response.json()))
+   .then(data => console.log(data.products));
 });
 
 // function displayProducts(productsData) {

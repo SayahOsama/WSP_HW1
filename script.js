@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-  fetch()
+  fetch('https://github.com/osama-sayah/WSP_HW1/blob/main/data.js')
   .then(response =>{ return response.json()})
   .then(productsData =>displayProducts(productsData.products));
 });

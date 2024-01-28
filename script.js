@@ -11,6 +11,7 @@ function displayProducts(products) {
 
   products.forEach(product => {
     const productCard = document.createElement('div');
+    productCard.classList.add('flex-item');
     productCard.innerHTML = `
       <h3>${product.title}</h3>
       <p>${product.description}</p>

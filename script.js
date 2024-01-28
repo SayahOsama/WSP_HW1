@@ -1,24 +1,10 @@
+// script.js
+import { productsData } from './data.js';
 
 document.addEventListener("DOMContentLoaded", function () {
-  fetchData();
+  // Display the product information
+  displayProducts(productsData.products);
 });
-
-function fetchData() {
-  // Simulate fetching data from a server
-  fetch('data.js')
-    .then(response => response.text())
-    .then(dataScript => {
-      // Use the Function constructor to execute the script
-      const dataModule = new Function(dataScript);
-
-      // Extract the exported data
-      const { productsData } = dataModule();
-
-      // Display the product information
-      displayProducts(productsData.products);
-    })
-    .catch(error => console.error('Error fetching data:', error));
-}
 
 function displayProducts(products) {
   const productsContainer = document.getElementById('productsContainer');
@@ -35,10 +21,3 @@ function displayProducts(products) {
     productsContainer.appendChild(productCard);
   });
 }
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   fetch('data.js')
-//    .then(response => console.log(response.json().products))
-//    .then(data => console.log(data.products));
-// });
-

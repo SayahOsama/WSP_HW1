@@ -1,24 +1,25 @@
-import { productsData } from './data.js';
 
 document.addEventListener("DOMContentLoaded", function () {
-    const productsContainer = document.getElementById('productsContainer');
-
-    // Display products
-    displayProducts(productsData.products);
+  fetch()
+  .then(response =>{ return response.json()})
+  .then(productsData =>displayProducts(productsData.products));
 });
 
-function displayProducts(products) {
-    products.forEach(product => {
-        const productCard = document.createElement('div');
-        productCard.classList.add('productCard');
+function displayProducts(productsData) {
+  const flexContainer = document.getElementById('flexContainer');
 
-        productCard.innerHTML = `
-            <h3>${product.title}</h3>
-            <p>${product.description}</p>
-            <p>Price: $${product.price}</p>
-            <p>Discounted Price: $${product.discounted_price}</p>
-        `;
+  // Clear existing flex items
+  flexContainer.innerHTML = '';
 
-        productsContainer.appendChild(productCard);
-    });
+  // Create flex items for each data item
+  productsData.forEach(item => {
+      const flexItem = document.createElement('div');
+      flexItem.classList.add('flexItem');
+      flexItem.innerHTML = `
+          <p>ID: ${item.id}</p>
+          <p>Name: ${item.name}</p>
+          <!-- Add more content as needed -->
+      `;
+      flexContainer.appendChild(flexItem);
+  });
 }

@@ -1,23 +1,33 @@
-// script.js
 import { productsData } from './data.js';
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Display the product information
   displayProducts(productsData.products);
 });
 
-function displayProducts(products) {
-  const productsContainer = document.getElementById('productsContainer');
-
-  products.forEach(product => {
-    const productCard = document.createElement('div');
-    productCard.classList.add('flex-item');
-    productCard.innerHTML = `
-      <h3>${product.title}</h3>
-      <p>${product.description}</p>
-      <p>Price: $${product.price.toFixed(2)}</p>
-      <img src="${product.image}" alt="${product.title}" width="100">
-      `;
-    productsContainer.appendChild(productCard);
-  });
-}
+function displayProducts(products, container) {
+    products.forEach(product => {
+      // Create elements using DOM manipulation
+      const productCard = document.createElement('div');
+      const titleElement = document.createElement('h3');
+      const descriptionElement = document.createElement('p');
+      const priceElement = document.createElement('p');
+      const imageElement = document.createElement('img');
+  
+      // Set content and attributes
+      titleElement.textContent = product.title;
+      descriptionElement.textContent = product.description;
+      priceElement.textContent = `Price: $${product.price.toFixed(2)}`;
+      imageElement.src = product.image;
+      imageElement.alt = product.title;
+      imageElement.width = 100;
+  
+      // Append elements to the product card
+      productCard.appendChild(titleElement);
+      productCard.appendChild(descriptionElement);
+      productCard.appendChild(priceElement);
+      productCard.appendChild(imageElement);
+  
+      // Append the product card to the container
+      container.appendChild(productCard);
+    });
+  }

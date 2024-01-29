@@ -14,6 +14,7 @@ function displayProducts(products, container) {
       const imageElement = document.createElement('img');
   
       // Set content and attributes
+      productCard.classList.add ('flex-item');
       titleElement.textContent = product.title;
       descriptionElement.textContent = product.description;
       priceElement.textContent = `Price: $${product.price.toFixed(2)}`;
@@ -23,9 +24,9 @@ function displayProducts(products, container) {
   
       // Append elements to the product card
       productCard.appendChild(titleElement);
+      productCard.appendChild(imageElement);
       productCard.appendChild(descriptionElement);
       productCard.appendChild(priceElement);
-      productCard.appendChild(imageElement);
   
       // Append the product card to the container
       container.appendChild(productCard);

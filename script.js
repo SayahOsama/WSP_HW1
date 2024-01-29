@@ -13,6 +13,7 @@ function displayProducts(products) {
       const descriptionElement = document.createElement('p');
       const priceElement = document.createElement('p');
       const imageElement = document.createElement('img');
+      const linkNextPageElement = document.createElement('a');
   
       // Set content and attributes
       productCard.classList.add ('flex-item');
@@ -21,11 +22,13 @@ function displayProducts(products) {
       priceElement.textContent = `Price: $${product.price.toFixed(2)}`;
       imageElement.src = `./images/${product.image_file_name}`;
       imageElement.alt = product.title;
-      //imageElement.width = 100;
+      imageElement.width = 100;
+      linkNextPageElement.href = './nextPage/index.html';
   
       // Append elements to the product card
+      linkNextPageElement.appendChild(imageElement);
       productCard.appendChild(titleElement);
-      productCard.appendChild(imageElement);
+      productCard.appendChild(linkNextPageElement);
       productCard.appendChild(descriptionElement);
       productCard.appendChild(priceElement);
   

@@ -9,7 +9,7 @@ function displayProducts(products) {
     products.forEach(product => {
       // Create elements using DOM manipulation
       const productCard = document.createElement('div');
-      const titleElement = document.createElement('h3');
+      const titleElement = document.createElement('h6');
       const descriptionElement = document.createElement('p');
       const priceElement = document.createElement('p');
       const imageElement = document.createElement('img');
@@ -19,9 +19,9 @@ function displayProducts(products) {
       titleElement.textContent = product.title;
       descriptionElement.textContent = product.description;
       priceElement.textContent = `Price: $${product.price.toFixed(2)}`;
-      imageElement.src = product.image;
+      imageElement.src = './images/${product.image}';
       imageElement.alt = product.title;
-      imageElement.width = 100;
+      //imageElement.width = 100;
   
       // Append elements to the product card
       productCard.appendChild(titleElement);

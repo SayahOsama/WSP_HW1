@@ -19,7 +19,7 @@ function displayProducts(products) {
       titleElement.textContent = product.title;
       descriptionElement.textContent = product.description;
       priceElement.textContent = `Price: $${product.price.toFixed(2)}`;
-      imageElement.src = './images/${product.image}';
+      imageElement.src = `./images/${product.image_file_name}`;
       imageElement.alt = product.title;
       //imageElement.width = 100;
   

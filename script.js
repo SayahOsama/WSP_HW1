@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
   displayProducts(productsData.products);
 });
 
-function displayProducts(products, container) {
+function displayProducts(products) {
+  const productsContainer = document.getElementById('productsContainer');
     products.forEach(product => {
       // Create elements using DOM manipulation
       const productCard = document.createElement('div');
@@ -29,6 +30,6 @@ function displayProducts(products, container) {
       productCard.appendChild(priceElement);
   
       // Append the product card to the container
-      container.appendChild(productCard);
+      productsContainer.appendChild(productCard);
     });
   }

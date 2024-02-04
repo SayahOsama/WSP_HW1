@@ -1,5 +1,6 @@
 import { productsData } from '../data.js';
 
+
 function GFG_Fun() {
   let search = window.location.href;
   search = search.split("?")[1];
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //create the product details' elements.
   const imageElement = document.createElement('img');
-  const titleElement = document.createElement('p');
+  const titleElement = document.createElement('h2');
   const descriptionElement = document.createElement('p');
 
   //set content and attributes.

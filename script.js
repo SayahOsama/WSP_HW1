@@ -39,7 +39,7 @@ function displayProducts(products) {
       productCard.classList.add ('flex-item');
       productCard.style.setProperty('order', Math.floor(Math.random() * products.length));
       moneySaved.classList.add ('saved-money-background');
-      moneySaved.textContent = `Save $${(product.price-product.discounted_price).toFixed(2)}`;
+      moneySaved.textContent = `Save ${Math.floor((100*((product.price-product.discounted_price)/product.price)))}%`;
   
       // Append elements to the product card
       linkNextPageElement.appendChild(imageElement);

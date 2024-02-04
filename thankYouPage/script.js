@@ -1,6 +1,4 @@
 import { productsData } from '../data.js';
-//      linkNextPageElement.href = `./thankYouPage/thankYouCard.html?productID=${product.id}`;
-
 
 function GFG_Fun() {
   let search = window.location.href;

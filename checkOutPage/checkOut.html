@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taub Online Store - Checkout</title>
+    <link rel="stylesheet" href="checkOutStyle.css" />
+    <link rel="icon" href="../StoreImages/T.png" type="image/png" />
+  </head>
+  <body>
+    <!-- Top Blue Strip with Navigation List -->
+    <div class="top-strip">
+      <ul class="navigation-list">
+        <li><a href="../index.html">Taub Store Catalog</a></li>
+        <p>2. Checkout form</p>
+      </ul>
+    </div>
+
+    <!-- Checkout Container -->
+    <div class="checkout-container">
+      <!-- Product Image -->
+      <div id="selectedProductImage" class="product-image">
+        <!-- <img src="product-image.jpg" alt="Product Image" /> -->
+      </div>
+
+      <!-- Checkout Form -->
+      <div class="checkout-form" id="checkoutForm">
+        <h2>Checkout</h2>
+
+        <!-- Credit Card Number -->
+        <label for="ccNumber">Credit Card Number:</label>
+        <input
+          type="text"
+          id="ccNumber"
+          name="ccNumber"
+          pattern="\d{16}"
+          required
+        />
+
+        <!-- Cardholder's Name -->
+        <label for="cardholderName">Cardholder's Name:</label>
+        <input
+          type="text"
+          id="cardholderName"
+          name="cardholderName"
+          pattern="[A-Za-z\s]+"
+          required
+        />
+
+        <!-- CVV and Expiration Date -->
+        <div class="cvv-expiration">
+          <div class="cvv">
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" pattern="\d{3}" required />
+          </div>
+
+          <div class="expiration-date">
+            <label for="expirationDate">Expiration Date (MM/YY):</label>
+            <input
+              type="text"
+              id="expirationDate"
+              name="expirationDate"
+              pattern="(0[1-9]|1[0-2])\/\d{2}"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Display Price -->
+        <p id="price"></p>
+
+        <!-- Submit Button -->
+        <button id="submit-button" type="submit" onclick="submitForm()">
+          Complete Purchase
+        </button>
+      </div>
+    </div>
+
+    <!-- Bottom Blue Strip -->
+    <div class="bottom-strip"></div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

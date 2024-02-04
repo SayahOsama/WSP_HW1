@@ -1,44 +1,40 @@
 
 body {
-  font-size: 30px;
-  margin: 20px;
+  background-color: #f4f4f4;
 }
 
 header{
-  font-size: 50px;
-  text-align: center;
-  margin: 45px;
+  font-size: 30px;
+  color: rgb(198, 171, 14);
+  padding: 50px;
+  background-image: url('./StoreImages/TaubFaculty.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
   
 .flex-container {
-     display: flex;
+    display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    padding: 0;
-    margin: 0 120px 0;
-    row-gap: 20px;
-    column-gap: 10px;
-    list-style: none; 
+    row-gap: 10px;
     height: 100%;
     background-color: #f4f4f4;
 }
 
 .flex-item {
   box-sizing: border-box;
-  margin: 16px;
-  padding: 16px;
+  margin-top: 16px;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 8px; 
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
 
-  /* Center text and image */
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  flex: 0 0 30%;
+  flex: 0 0 31%;
  }
 
  .flex-item:hover {
@@ -47,14 +43,55 @@ header{
 
 .flex-item img {
   width: 100%;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.flex-item h6 {
-  margin-top: 10px;
+.flex-item .description {
+  background-color: #001f3f;
+  color: rgb(198, 171, 14);
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  padding: 5px;
+}
+
+.flex-item:hover .description {
+  opacity: 1;
+}
+
+.product-title {
+  font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
-.flex-item p {
+.strikethrough {
+  text-decoration: line-through;
+  color: red;
+}
+
+.product-prices{
+  display: flex;
+  flex-flow: row;
+  column-gap: 10px; 
   font-size: 1rem;
-  color: #555;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.saved-money-background {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  display: inline-block;
+  background-color: #34f70374;
+}
+
+footer {
+  margin-top: 10px;
+  background-color: #001f3f; 
+  color: rgb(198, 171, 14);
+  padding: 10px;
+  
+}
+a{
+  color: white;
 }
